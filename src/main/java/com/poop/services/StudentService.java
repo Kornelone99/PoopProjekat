@@ -1,4 +1,4 @@
-package com.janko.services;
+package com.poop.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.janko.model.Student;
-import com.janko.repository.StudentRepository;
+import com.poop.model.Student;
+import com.poop.repository.StudentRepository;
 
 @Service
 @Transactional

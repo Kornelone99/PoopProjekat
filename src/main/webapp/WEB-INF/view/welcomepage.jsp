@@ -31,6 +31,9 @@
 					href="/create-student">Create Student <span class="sr-only">(current)</span>
 				</a></li>
 				<li class="nav-item active"><a class="nav-link"
+					href="/create-predmet">Create Predmet <span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item active"><a class="nav-link"
 					href="/show-students">All Students <span class="sr-only">(current)</span>
 				</a></li>
 		</div>
@@ -111,7 +114,7 @@
 		
 		<c:when test="${mode=='ALL_STUDENTS'}">
 		<div class="container text-center" id="tasksDiv">
-			<h3>All Users</h3>
+			<h3>Svi Studenti</h3>
 			<hr>
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered">
@@ -212,6 +215,77 @@
 				</form>
 			</div>
 		</c:when>
+		<c:when test="${mode=='MODE_CREATE_PREDMET' }">
+			<div class="container text-center">
+				<h3>New Registration</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="save-predmet">
+					<input type="hidden" name="id" value="${prdmet.id }" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Naziv Predmeta</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="nazivPredmeta"
+								value="${predmet.nazivPredmeta }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Smer</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="smer"
+								value="${predmet.smer }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Godina</label>
+						<div class="col-md-7">
+							<input type="number" class="form-control" name="godina"
+								value="${predmet.godina }" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Ime Profesora</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="imeProfesora"
+								value="${predmet.imeProfesora}" />
+						</div>
+					</div>
+					
+					<div class="form-group ">
+						<input type="submit" class="btn btn-primary" value="Register" />
+					</div>
+				</form>
+			</div>
+		</c:when>
+		
+		<c:when test="${mode=='ALL_SUBJECTS'}">
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Naziv Predmeta</th>
+					<th>Smer</th>
+					<th>Godina</th>
+					<th>Ime Profesora</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="predmet" items="${subjects}">
+					<tr>
+						<td>${predmet.id}ddslkskl</td>
+						<td>${predmet.nazivPredmeta}</td>
+						<td>${predmet.smer}</td>
+						<td>${predmet.godina}</td>
+						<td>${predmet.imeProfesora}</td>
+
+
+
+						<td><a href="/delete-student?id=${predmet.id }">Obrisi</a></td>
+						<td><a href="/edit-student?id=${predmet.id }">Edit</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</c:when>
 	</c:choose>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

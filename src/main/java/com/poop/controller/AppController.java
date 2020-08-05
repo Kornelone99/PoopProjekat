@@ -1,4 +1,4 @@
-package com.janko.controller;
+package com.poop.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.janko.model.Student;
-import com.janko.services.StudentService;
+import com.poop.model.Student;
+import com.poop.services.StudentService;
 
 @Controller
 public class AppController {

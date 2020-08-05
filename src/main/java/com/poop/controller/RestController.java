@@ -1,11 +1,11 @@
-package com.janko.controller;
+package com.poop.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.janko.model.Student;
-import com.janko.services.StudentService;
+import com.poop.model.Student;
+import com.poop.services.StudentService;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
