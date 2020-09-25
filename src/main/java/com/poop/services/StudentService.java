@@ -27,6 +27,7 @@ public class StudentService {
 	public List<Student> showAllStudents(){
 		List<Student> students = new ArrayList<Student>();
 		for(Student student : studentRepository.findAll()) {
+			if(student.getIme().equals("admin")) continue;
 			students.add(student);
 		}
 		return students;
@@ -39,4 +40,17 @@ public class StudentService {
 	public Student editUser(int id) {
 		return studentRepository.findById((long) id).orElse(null);
 	}
+	
+	public Student findByEmail(String email) {
+		return studentRepository.findByEmail(email);
+	}
+	
+	public Student findById(int id) {
+		return studentRepository.findById((long) id).orElse(null);
+	}
+	
+	public boolean existsByIndeks(String index) {
+		return studentRepository.existsByIndeks(index);
+	}
+	
 }

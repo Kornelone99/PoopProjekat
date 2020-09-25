@@ -41,4 +41,15 @@ public class PredmetService {
 	public Predmet editSubject(int id) {
 		return predmetRepository.findById((long) id).orElse(null);
 	}
+	
+	public List<Predmet> findByGodina(int godina){
+		List<Predmet> predmeti = new ArrayList<Predmet>();
+		for(Predmet predmet : predmetRepository.findAll()) {
+			if(predmet.getGodina() <= godina) {
+				predmeti.add(predmet);
+			}
+		}
+	//	System.out.println("Godina je " + godina + "predmeti su " + predmeti.size());
+		return predmeti;
+	}
 }

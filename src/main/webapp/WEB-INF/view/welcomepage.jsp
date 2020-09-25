@@ -5,16 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Studentska Sluzba</title>
+<title>Studentska služba</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+<style><%@include file="/WEB-INF/css/home.css"%></style>
+<style><%@include file="/WEB-INF/css/meni.css"%></style>
 <style><%@include file="/WEB-INF/css/style.css"%></style>
+<link rel="SHORTCUT ICON" href="https://studentskasluzba.com/wp-content/uploads/2015/06/logonovi2.png"/>
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Studentska Sluzba</a>
+<body style="background-color:#ebebeb;">
+	<%--<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="welcome">Studentska Sluzba</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -37,87 +42,205 @@
 					href="/show-students">All Students <span class="sr-only">(current)</span>
 				</a></li>
 		</div>
-	</nav>
+	</nav>--%>
 
 	
 	<c:choose>
 		<c:when test="${mode=='MODE_HOME'}">
-			<div class="container py-3" id="homediv">
-				<div class="jumbotron text-center">
-					<h1>Dobrodosli U IMI Studensku Sluzbu</h1>
-					<h3>SAasklsakl eqopEDEDEwdjke</h3>
-				</div>
-			</div>
+			<div id="glavni1">
+            
+            <div id="heder">
+                <h1 id="ss">
+                   
+                    <a href="welcome">STUDENTSKA SLUŽBA</a>
+                </h1>
+                <div id="meni">
+                    <ul>
+                        
+                        <li><a href="create-student">DODAJ STUDENTA</a></li>
+                        <li><a href="show-students">STUDENTI </a></li>
+                        <li><a href="create-predmet">DODAJ PREDMET</a></li>
+                        <li><a href="show-subjects">PREDMETI</a></li>
+                        <li><a href="create-profesor">DODAJ PROFESORA</a></li>
+                        <li><a href="show-profesors">PROFESORI</a></li>
+                        <li><a href="logout">IZLOGUJ SE</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            <br>
+            <br><br>
+            <br><br>
+            <br><br>
+            
+            
+            
+            
+            
+            
+            <div id="slika">
+                <img src="https://imi.pmf.kg.ac.rs/kongres/assets/img/pmf.png" alt=""/>
+
+            </div>
+  
+            
+            
+            <div id="dobrodosli">
+            <p id="dobrodoslit">Dobrodošli u Studentsku Službu <br>
+                <a href="https://imi.pmf.kg.ac.rs/oglasna-tabla">instituta za Informatiku I Matematiku</a></p>
+            </div>
+               
+        </div> 
 		</c:when>
 		
 		<c:when test="${mode=='MODE_CREATE_STUDENT'}">
-			<div class="container text-center">
-				<h3>New Registration</h3>
-				<hr>
-				<form class="form-horizontal" method="POST" action="save-student">
-					<input type="hidden" name="id" value="${student.id }" />
-					<div class="form-group">
-						<label class="control-label col-md-3">Ime</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="ime"
-								value="${student.ime }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Prezime</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="prezime"
-								value="${student.prezime }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Email</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${student.email }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Jmbg </label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="jmbg"
-								value="${student.jmbg }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Password</label>
-						<div class="col-md-7">
-							<input type="password" class="form-control" name="password"
-								value="${student.password }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Indeks</label>
-						<div class="col-md-7">
-						<input type="text" class="form-control" name="indeks"
-							value="${student.indeks }" />
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Godina</label>
-						<div class="col-md-7">
-							<input type="number" class="form-control" name="godina"
-								value="${student.godina }" />
-						</div>
-					</div>
-					</div>
-					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Register" />
-					</div>
-				</form>
-			</div>
+			<div id="glavni">
+                      <div id="heder">
+                <h1 id="ss">
+                   
+                    <a href="welcome">STUDENTSKA SLUŽBA</a>
+                </h1>
+                <div id="meni">
+                    <ul>
+                        
+                        <li><a href="create-student" id="aktivan">DODAJ STUDENTA</a></li>
+                        <li><a href="show-students">STUDENTI </a></li>
+                        <li><a href="create-predmet">DODAJ PREDMET</a></li>
+                        <li><a href="show-subjects">PREDMETI</a></li>
+                        <li><a href="create-profesor">DODAJ PROFESORA</a></li>
+                        <li><a href="show-profesors">PROFESORI</a></li>
+                        <li><a href="logout">IZLOGUJ SE</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+          
+            <br>
+            <div id="forma" class="container" style="background-color:lightgray; padding-top:10px;
+            border:3px solid #3190cb;margin-bottom:20px;
+         padding-bottom:30px;">
+                <form  class="form-horizontal" method="POST" action="save-student" >
+      
+                    <input type="hidden" name="id" value="${student.id }" />
+  <div class="form-group">
+              <label for="ime" class="col-sm-2 control-label">IME</label>
+              <div class="col-sm-10">
+                <input type="text" name="ime" value="${student.ime }" id="ime"
+                placeholder="ime"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+  </div>
+
+   <div class="form-group">
+              <label for="prezime" class="col-sm-2 control-label">PREZIME</label>
+              <div class="col-sm-10">
+                <input type="text" name="prezime" value="${student.prezime }" id="prezime"
+                placeholder="prezime"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+   </div>
+   
+   
+  <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">EMAIL</label>
+              <div class="col-sm-10">
+                <input type="text" name="email" value="${student.email }" id="email"
+                   placeholder="email"
+                   class="form-control"
+                   oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+   </div>
+   
+   
+  <div class="form-group">
+              <label for="jmbg" class="col-sm-2 control-label">JMBG</label>
+              <div class="col-sm-10">
+                <input type="text" name="jmbg" value="${student.jmbg }" id="jmbg"
+              placeholder="jmbg"
+              class="form-control"
+               oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+    </div>
+    
+    
+  <div class="form-group">
+              <label for="lozinka" class="col-sm-2 control-label">LOZINKA</label>
+              <div class="col-sm-10">
+                <input type="password" name="password" value="${student.password }" id="lozinka"
+                 placeholder="lozinka"
+                 class="form-control"
+                 oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+    </div>
+    
+    
+  <div class="form-group">
+              <label for="indeks" class="col-sm-2 control-label">INDEKS</label>
+              <div class="col-sm-10">
+                <input type="text" name="indeks" value="${student.indeks }" id="indeks"
+                placeholder="indeks"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+ </div>
+ 
+ <div class="form-group">
+              <label for="godina" class="col-sm-2 control-label">GODINA</label>
+              <div class="col-sm-10">
+                <input type="text"  name="godina" value="${student.godina }" id="godina"
+                 placeholder="godina"
+                 class="form-control"
+                 oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+ </div>
+ 
+       <div class="form-group">
+             <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="DODAJ STUDENTA" id="dugme"
+                  class="btn btn-primary"
+                  style="margin:10px; background-color:#3190cb;"
+                       >
+              </div>
+      </div>
+</form> 
+                
+                
+            </div>
+            
+            
+            
+            </div>
 		</c:when>
 		
 		<c:when test="${mode=='ALL_STUDENTS'}">
+		      <div id="heder">
+                <h1 id="ss">
+                   
+                    <a href="welcome">STUDENTSKA SLUŽBA</a>
+                </h1>
+                <div id="meni" >
+                    <ul>
+                       
+                        <li><a href="create-student">DODAJ STUDENTA</a></li>
+                        <li><a href="show-students" id="aktivan">STUDENTI </a></li>
+                        <li><a href="create-predmet">DODAJ PREDMET</a></li>
+                        <li><a href="show-subjects">PREDMETI</a></li>
+                        <li><a href="create-profesor">DODAJ PROFESORA</a></li>
+                        <li><a href="show-profesors">PROFESORI</a></li>
+                        <li><a href="logout">IZLOGUJ SE</a></li>
+                     </ul>
+                </div>
+                
+            </div>
+		
 		<div class="container text-center" id="tasksDiv">
-			<h3>Svi Studenti</h3>
-			<hr>
+			<h3 style="color: #3190cb;">SVI STUDENTI</h3>
+			
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered">
+			<hr>
+				<table class="table table-striped table-bordered" style="border:3px solid #3190cb;">
 					<thead>
 						<tr>
 							<th>Id</th>
@@ -125,11 +248,11 @@
 							<th>Prezime</th>
 							<th>Email</th>
 							<th>Jmbg</th>
-							<th>Password</th>
+							<th>Lozinka</th>
 							<th>Indeks</th>
 							<th>Godina</th>
-							<th>Obrisi</th>
-							<th>Edit</th>
+							<th>Obriši</th>
+							<th>Izmeni</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -144,8 +267,8 @@
 								<td>${student.indeks}</td>
 								<td>${student.godina}</td>
 								
-								<td><a href="/delete-student?id=${student.id }">Obrisi</a></td>
-								<td><a href="/edit-student?id=${student.id }">Edit</a></td>
+								<td><a href="/delete-student?id=${student.id }"><button class="btn"><i class="fa fa-trash"></i></button></a></td>
+								<td><a href="/edit-student?id=${student.id }"><button class="btn"><i class="fa fa-edit"></i></button></a></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -155,68 +278,134 @@
 		</c:when>
 		
 		<c:when test="${mode=='MODE_UPDATE' }">
-			<div class="container text-center">
-				<h3>Update Student</h3>
-				<hr>
-				<form class="form-horizontal" method="POST" action="save-student">
-					<input type="hidden" name="id" value="${student.id }" />
-					<div class="form-group">
-						<label class="control-label col-md-3">Ime</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="ime"
-								value="${student.ime }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Prezime</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="prezime"
-								value="${student.prezime }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Email</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${student.email }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Jmbg </label>
-						<div class="col-md-3">
-							<input type="text" class="form-control" name="jmbg"
-								value="${student.jmbg }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Password</label>
-						<div class="col-md-7">
-							<input type="password" class="form-control" name="password"
-								value="${student.password }" />
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Indeks</label>
-						<div class="col-md-7">
-						<input type="text" class="form-control" name="indeks"
-							value="${student.indeks }" />
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Godina</label>
-						<div class="col-md-7">
-							<input type="number" class="form-control" name="godina"
-								value="${student.godina }" />
-						</div>
-					</div>
-					</div>
-					<div class="form-group ">
-						<input type="submit" class="btn btn-primary" value="Update" />
-					</div>
-				</form>
-			</div>
+			<div id="glavni">
+                      <div id="heder">
+                <h1 id="ss">
+                   
+                    <a href="welcome">STUDENTSKA SLUŽBA</a>
+                </h1>
+                <div id="meni">
+                    <ul>
+
+                        <li><a href="create-student">DODAJ STUDENTA</a></li>
+                        <li><a href="show-students" id="aktivan">STUDENTI </a></li>
+                        <li><a href="create-predmet">DODAJ PREDMET</a></li>
+                        <li><a href="show-subjects">PREDMETI</a></li>
+                        <li><a href="create-profesor">DODAJ PROFESORA</a></li>
+                        <li><a href="show-profesors">PROFESORI</a></li>
+                        <li><a href="logout">IZLOGUJ SE</a></li>
+</ul>
+                </div>
+                
+            </div>
+          
+          
+          
+            <br>
+            <div id="forma">
+             <div id="forma" class="container" style="background-color:lightgray; padding-top:10px;
+             border:3px solid #3190cb;
+         padding-bottom:30px;">
+                <form  class="form-horizontal" method="POST" action="save-student" >
+      
+                    <input type="hidden" name="id" value="${student.id }" />
+
+
+  <div class="form-group">
+              <label for="ime" class="col-sm-2 control-label">IME</label>
+              <div class="col-sm-10">
+                <input type="text" name="ime" value="${student.ime }" id="ime"
+                placeholder="ime"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+  </div>
+
+   <div class="form-group">
+              <label for="prezime" class="col-sm-2 control-label">PREZIME</label>
+              <div class="col-sm-10">
+                <input type="text" name="prezime" value="${student.prezime }" id="prezime"
+                placeholder="prezime"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+   </div>
+   
+   
+  <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">EMAIL</label>
+              <div class="col-sm-10">
+                <input type="text" name="email" value="${student.email }" id="email"
+                   placeholder="email"
+                   class="form-control"
+                   oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+   </div>
+   
+   
+  <div class="form-group">
+              <label for="jmbg" class="col-sm-2 control-label">JMBG</label>
+              <div class="col-sm-10">
+                <input type="text" name="jmbg" value="${student.jmbg }" id="jmbg"
+              placeholder="jmbg"
+              class="form-control"
+               oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+    </div>
+    
+    
+  <div class="form-group">
+              <label for="lozinka" class="col-sm-2 control-label">LOZINKA</label>
+              <div class="col-sm-10">
+                <input type="password" name="password" value="${student.password }" id="lozinka"
+                 placeholder="lozinka"
+                 class="form-control"
+                 oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+    </div>
+    
+    
+  <div class="form-group">
+              <label for="indeks" class="col-sm-2 control-label">INDEKS</label>
+              <div class="col-sm-10">
+                <input type="text" name="indeks" value="${student.indeks }" id="indeks"
+                placeholder="indeks"
+                class="form-control"
+                oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+ </div>
+ 
+ <div class="form-group">
+              <label for="godina" class="col-sm-2 control-label">GODINA</label>
+              <div class="col-sm-10">
+                <input type="text"  name="godina" value="${student.godina }" id="godina"
+                 placeholder="godina"
+                 class="form-control"
+                 oninvalid="this.setCustomValidity('OBAVEZNO POLJE')"  oninput="setCustomValidity('')" required="" />
+              </div>
+ </div>
+ 
+       <div class="form-group">
+             <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="IZMENI" id="dugme"
+                  class="btn btn-primary"
+                  style="margin:10px; background-color:#3190cb;"
+                       >
+              </div>
+      </div>
+</form> 
+                
+                
+            </div>
+            
+            
+            
+            </div>
 		</c:when>
 		<c:when test="${mode=='MODE_CREATE_PREDMET' }">
+		
 			<div class="container text-center">
+			
 				<h3>New Registration</h3>
 				<hr>
 				<form class="form-horizontal" method="POST" action="save-predmet">
@@ -258,6 +447,7 @@
 		</c:when>
 		
 		<c:when test="${mode=='ALL_SUBJECTS'}">
+		
 		<table class="table table-striped table-bordered">
 			<thead>
 				<tr>

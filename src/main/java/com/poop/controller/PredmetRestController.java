@@ -16,8 +16,8 @@ public class PredmetRestController {
 	private PredmetService predmetService;
 	
 	@GetMapping("/savepredmet")
-	public String saveStudent(@RequestParam String nazivPredmeta,@RequestParam String smer,@RequestParam int godina,@RequestParam String imeProfesora) {
-		Predmet predmet = new Predmet(nazivPredmeta, smer, godina, imeProfesora);
+	public String saveStudent(@RequestParam String nazivPredmeta,@RequestParam String smer,@RequestParam int godina,@RequestParam String imeProfesora,String jmbg) {
+		Predmet predmet = new Predmet(nazivPredmeta, smer, godina, imeProfesora,jmbg);
 		predmetService.saveMyPredmet(predmet);
 		
 		return "Predmet sacuvan";

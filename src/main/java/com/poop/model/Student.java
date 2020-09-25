@@ -1,9 +1,15 @@
 package com.poop.model;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +27,9 @@ public class Student {
 	private String indeks;
 	private int godina;
 	
+	@ManyToMany
+    private Set<Role> roles;
+	
 	public Student() {
 		
 	}
@@ -34,6 +43,7 @@ public class Student {
 		this.password = password;
 		this.indeks = indeks;
 		this.godina = godina;
+	//	this.roles = null;
 	}
 	public Long getId() {
 		return id;
@@ -83,6 +93,16 @@ public class Student {
 	public void setGodina(int godina) {
 		this.godina = godina;
 	}
+
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", ime=" + ime + ", prezime=" + prezime + ", email=" + email + ", jmbg=" + jmbg

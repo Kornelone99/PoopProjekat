@@ -17,18 +17,24 @@ public class Predmet {
 	private String smer;
 	private int godina;
 	private String imeProfesora;
+	private String jmbg;
 	
 	public Predmet() {
 		
 	}
 	
-	public Predmet(String nazivPredmeta, String smer, int godina, String imeProfesora) {
+	
+
+	public Predmet(String nazivPredmeta, String smer, int godina, String imeProfesora, String jmbg) {
 		super();
 		this.nazivPredmeta = nazivPredmeta;
 		this.smer = smer;
 		this.godina = godina;
 		this.imeProfesora = imeProfesora;
+		this.jmbg = jmbg;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -69,6 +75,20 @@ public class Predmet {
 	public void setImeProfesora(String imeProfesora) {
 		this.imeProfesora = imeProfesora;
 	}
+	
+	
+
+	public String getJmbg() {
+		return jmbg;
+	}
+
+
+
+	public void setJmbg(String jmbg) {
+		this.jmbg = jmbg;
+	}
+
+
 
 	@Override
 	public String toString() {

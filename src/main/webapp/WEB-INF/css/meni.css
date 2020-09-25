@@ -1,0 +1,87 @@
+#heder{
+    background-color: #404040;
+    height: 70px;
+    margin-left:30px;
+    margin-right:30px;
+    margin-bottom:40px;
+
+    position: relative;
+    top: 8px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    
+    
+}
+#ss a{
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #037ebf;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.19);
+    
+    
+    
+    
+}
+#meni ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-family: sans-serif;
+
+ 
+}
+#meni{
+    float: right;
+    width:auto;
+  
+}
+#meni li {
+  float:left;
+}
+
+#meni li a {
+  display: block;
+  text-align: center;
+  padding: 15px 10px;
+  text-decoration: none;
+    color: white;
+    background-color: dimgrey;
+    border-radius: 4px;
+    margin: 10px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 3px 2px 0 rgba(0, 0, 0, 0.19);
+    font-weight: 200;
+}
+
+#ss{
+    float: left;
+    text-align: center center;
+    //margin-right: 40px;
+    margin-left: 20px;
+	padding-top:7px;
+	
+
+    
+    
+    
+}
+#meni li a:hover{
+    background-color: #3190cb;
+    height:30px;
+    color: white;
+    border-radius: 5px;
+    height: 50px;
+    
+}
+
+#meni #aktivan{
+     background-color:#006080; 
+     height:30px;
+     color: white;
+     border-radius: 10px;
+     height: 50px;
+
+}

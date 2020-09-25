@@ -1,0 +1,65 @@
+html, body {
+  height: 100%;
+}
+body{
+    margin:  0 auto;
+
+   
+}
+#glavni1{
+    background-image: url('https://www.diplomatija.com/wp-content/uploads/2018/12/Studentski-indeks-770x450.jpg');
+//background-image:url('https://www.netokracija.rs/wp-content/uploads/sites/4/2017/03/vucic-675x400.png');   
+ background-color: transparent;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    
+}
+ 
+
+
+
+
+#slika img{
+   
+   
+    opacity: 0.7;
+    height: 300px;
+    width: 300px;
+}
+#slika{
+    height: 350px;
+    width: 100%;
+    clear: both;
+    text-align: center;
+}
+#dobrodoslit{
+    font-size: 50px;
+    font-family: sans-serif;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.19);
+   color: black;
+   background-color: rgb(232,232,232,.4);
+  
+   
+    
+}
+#dobrodosli{
+    
+    text-align: center;
+    
+
+   
+
+}
+
+
+#dobrodosli a{
+    text-decoration: none;
+    color: black;
+}
+#dobrodosli a:hover{
+    color: #3190cb;
+}
+
+

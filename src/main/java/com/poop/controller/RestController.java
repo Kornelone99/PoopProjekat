@@ -13,11 +13,11 @@ public class RestController {
 	@Autowired
 	private StudentService studentService;
 	
-	@GetMapping("/")
-	public String hello() {
-		return "This is Home page";
-	}
-	
+//	@GetMapping("/")
+//	public String hello() {
+//		return "This is Home page";
+//	}
+//	
 	
 	
 	@GetMapping("/savestudent")

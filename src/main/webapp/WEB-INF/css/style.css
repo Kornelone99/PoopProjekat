@@ -1,10 +1,60 @@
 @charset "UTF-8";
+body{
+margin:0 auto;}
 
-/*
-body {
-	background: green;
+
+#naslov{
+  color: #5cb85c;
+  text-align: center;
+  text-shadow: shadow;
+  font-family: sans-serif;
 }
 
-p {
-	color: blue;
-}*/
+
+
+#pola{
+  width: 50%;
+}
+
+.center {
+  position: absolute;
+ 
+  width: 100%;
+}
+
+table{
+text-align:center;
+
+}
+table.table-bordered{
+    border:3px solid #3190cb;
+    margin-top:20px;
+
+
+  }
+
+table.table-bordered > thead > tr > th{
+    border:1px solid white;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid white;
+}
+
+.alertDiv {
+    width: 300px;
+    height: 50px;
+    background: green;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+#prijavljen_ispit{
+	text-align:center;	
+	color:#3190cb;
+ text-transform: capitalize;
+background-color:lightgrey;
+padding:30px;
+
+}

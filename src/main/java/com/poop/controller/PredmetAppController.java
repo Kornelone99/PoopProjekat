@@ -30,8 +30,9 @@ public class PredmetAppController {
 	@PostMapping("/save-predmet")
 	public String registerStudent(@ModelAttribute Predmet predmet,BindingResult bindingResult,HttpServletRequest request) {
 		predmetService.saveMyPredmet(predmet);
-		request.setAttribute("mode", "MODE_HOME");
-		return "welcomepage";
+		request.setAttribute("subjects", predmetService.showAllSubjects());
+		request.setAttribute("mode", "ALL_SUBJECTS");
+		return "showPredmets";
 	}
 	
 	@GetMapping("/show-subjects")
